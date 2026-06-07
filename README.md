@@ -15,4 +15,8 @@ Email: testingif23b@mail.com
 Password: 12345678
 
 ## Build Aplikasi
-File APK dapat ditemukan pada folder: build\app\outputs\flutter-apk\app-release.apk
+File APK tersedia dalam bentuk ZIP:
+- app-release.zip
+
+Mohon maaf sebelumnya aplikasi tidak langsung di-upload dengan ekstensi .apk dikarenakan adanya batasan ukuran upload oleh GitHub.
+Terima kasih banyak, Pak.
