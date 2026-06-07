@@ -6,6 +6,7 @@ import 'firebase_options.dart';
 import 'auth_screen.dart';
 import 'home_screen.dart';
 
+//1
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
@@ -15,20 +16,26 @@ Future<void> main() async {
 
   runApp(const MyApp());
 }
+//
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
+//2
     return MaterialApp(
       title: 'Flutter Firebase Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+//
+//3
       home: StreamBuilder<User?>(
         stream: FirebaseAuth.instance.authStateChanges(),
+//
         builder: (context, snapshot) {
+//4
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Scaffold(
               body: Center(
@@ -36,7 +43,8 @@ class MyApp extends StatelessWidget {
               ),
             );
           }
-
+//
+//5
           if (snapshot.hasData) {
             // Pengguna sudah login
             return const HomeScreen();
@@ -44,6 +52,7 @@ class MyApp extends StatelessWidget {
 
           // Pengguna belum login
           return const AuthScreen();
+//
         },
       ),
     );

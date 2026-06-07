@@ -1,21 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
+//1
 class AuthScreen extends StatefulWidget {
   const AuthScreen({super.key});
 
   @override
   State<AuthScreen> createState() => _AuthScreenState();
 }
+//
 
 class _AuthScreenState extends State<AuthScreen> {
+//2
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+//  
 
+//3
   bool _isLogin = true;
   String? _errorMessage;
+//
 
   @override
   void dispose() {
@@ -24,6 +30,7 @@ class _AuthScreenState extends State<AuthScreen> {
     super.dispose();
   }
 
+//4
   Future<void> _submitAuthForm() async {
     setState(() {
       _errorMessage = null;
@@ -51,6 +58,7 @@ class _AuthScreenState extends State<AuthScreen> {
       });
     }
   }
+//
 
   @override
   Widget build(BuildContext context) {
@@ -67,6 +75,7 @@ class _AuthScreenState extends State<AuthScreen> {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
+//5
                   // EMAIL
                   TextFormField(
                     controller: _emailController,
@@ -81,7 +90,6 @@ class _AuthScreenState extends State<AuthScreen> {
                       return null;
                     },
                   ),
-
                   // PASSWORD
                   TextFormField(
                     controller: _passwordController,
@@ -96,7 +104,7 @@ class _AuthScreenState extends State<AuthScreen> {
                       return null;
                     },
                   ),
-
+//
                   const SizedBox(height: 12),
 
                   // ERROR MESSAGE
@@ -108,13 +116,14 @@ class _AuthScreenState extends State<AuthScreen> {
                     ),
 
                   const SizedBox(height: 12),
-
+//6
                   // SUBMIT BUTTON
                   ElevatedButton(
                     onPressed: _submitAuthForm,
                     child: Text(_isLogin ? 'Login' : 'Registrasi'),
                   ),
-
+//
+//7
                   // SWITCH MODE
                   TextButton(
                     onPressed: () {
@@ -129,6 +138,7 @@ class _AuthScreenState extends State<AuthScreen> {
                           : 'Saya sudah punya akun',
                     ),
                   ),
+//
                 ],
               ),
             ),
